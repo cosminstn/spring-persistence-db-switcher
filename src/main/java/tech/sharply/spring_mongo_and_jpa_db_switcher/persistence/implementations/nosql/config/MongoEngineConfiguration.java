@@ -25,7 +25,7 @@ import java.util.List;
 
 @Configuration
 @EnableMongoRepositories
-@ConditionalOnProperty("spring.data.mongodb")
+@ConditionalOnProperty("spring.data.mongodb.database")
 public class MongoEngineConfiguration extends AbstractMongoClientConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MongoEngineConfiguration.class);
