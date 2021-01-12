@@ -11,7 +11,7 @@ import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations
 
 import javax.annotation.PostConstruct;
 
-@ConditionalOnBean(MongoEngineConfiguration.class)
+//@ConditionalOnBean(MongoEngineConfiguration.class)
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @EnableScheduling
 public class MongoApp extends App {
