@@ -7,3 +7,8 @@ The database engine is determined automatically by the datasource configured in 
 TODOs:
 [ ] - Currently the app is stoppping imediatelly after starting even with the Scheduled component being implemented
 [ ] - It seems like neither repositories are being registered (but maybe they don't have time to be registerered)
+
+
+Resources:
+1. [https://www.baeldung.com/spring-component-scanning](https://www.baeldung.com/spring-component-scanning)
+2. [https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa](https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa)
