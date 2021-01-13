@@ -25,15 +25,15 @@ public class App implements CommandLineRunner {
 	}
 
 	private static void checkBeansPresence(String... beans) {
-		var logStr = new StringBuilder("Registered beans: ").append(System.lineSeparator());
+		var logStr = new StringBuilder("Registered beans:").append(System.lineSeparator());
 		for (String beanName : beans) {
-			logStr.append(beanName).append(" -> ").append(applicationContext.containsBean(beanName)).append(System.lineSeparator());
+			logStr.append(beanName).append(" -> ").append(applicationContext.containsBean(beanName) ? "✓" : "X").append(System.lineSeparator());
 		}
 		LOG.info(logStr.toString());
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		LOG.info("Running cli app");
 	}
 }
