@@ -1,9 +1,9 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.entities;
+package tech.sharply.spring.db_switcher.persistence.entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.nosql.MongoUserRepository;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.sql.SqlUserRepository;
+import tech.sharply.spring.db_switcher.persistence.implementations.nosql.MongoUserRepository;
+import tech.sharply.spring.db_switcher.persistence.implementations.sql.SqlUserRepository;
 
 import javax.annotation.PostConstruct;
 

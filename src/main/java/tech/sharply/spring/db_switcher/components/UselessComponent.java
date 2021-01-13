@@ -1,4 +1,4 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.components;
+package tech.sharply.spring.db_switcher.components;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

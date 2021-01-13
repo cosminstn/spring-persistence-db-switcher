@@ -1,4 +1,4 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.sql.config;
+package tech.sharply.spring.db_switcher.persistence.implementations.sql.config;
 
 
 import org.slf4j.Logger;

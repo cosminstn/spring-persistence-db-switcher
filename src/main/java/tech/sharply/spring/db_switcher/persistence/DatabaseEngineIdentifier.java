@@ -1,11 +1,11 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.persistence;
+package tech.sharply.spring.db_switcher.persistence;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.nosql.config.MongoEngineConfiguration;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.sql.config.SqlEngineConfiguration;
+import tech.sharply.spring.db_switcher.persistence.implementations.nosql.config.MongoEngineConfiguration;
+import tech.sharply.spring.db_switcher.persistence.implementations.sql.config.SqlEngineConfiguration;
 
 import javax.annotation.PostConstruct;
 

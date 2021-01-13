@@ -1,12 +1,14 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher;
+package tech.sharply.spring.db_switcher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-@Configuration
+@SpringBootApplication
+@EnableScheduling
 public class App implements CommandLineRunner {
 
 	private static final Logger LOG = LoggerFactory.getLogger(App.class);

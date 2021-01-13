@@ -1,11 +1,11 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.sql;
+package tech.sharply.spring.db_switcher.persistence.implementations.sql;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.entities.User;
+import tech.sharply.spring.db_switcher.persistence.entities.User;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

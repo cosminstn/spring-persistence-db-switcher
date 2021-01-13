@@ -1,4 +1,4 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.nosql.config;
+package tech.sharply.spring.db_switcher.persistence.implementations.nosql.config;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -19,13 +19,13 @@ import org.springframework.data.mongodb.core.index.IndexResolver;
 import org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexResolver;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import tech.sharply.spring_mongo_and_jpa_db_switcher.persistence.implementations.nosql.MongoUser;
+import tech.sharply.spring.db_switcher.persistence.implementations.nosql.MongoUser;
 
 import java.util.List;
 
 @Configuration
 @EnableMongoRepositories
-@ConditionalOnProperty("spring.data.mongodb.database")
+@ConditionalOnProperty("spring.data.mongodb")
 public class MongoEngineConfiguration extends AbstractMongoClientConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MongoEngineConfiguration.class);

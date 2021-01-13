@@ -1,4 +1,4 @@
-package tech.sharply.spring_mongo_and_jpa_db_switcher;
+package tech.sharply.spring.db_switcher;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
