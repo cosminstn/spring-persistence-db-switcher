@@ -23,9 +23,10 @@ import tech.sharply.spring.db_switcher.persistence.implementations.nosql.MongoUs
 
 import java.util.List;
 
+// We either need the simple @EnableMongoRepository in a class on the top level (MongoApp in our case), or here with a basePackage for repos to search
+//@EnableMongoRepositories(basePackages = "tech.sharply.spring.db_switcher.persistence.implementations.nosql")
 @Configuration
-@EnableMongoRepositories
-@ConditionalOnProperty("spring.data.mongodb")
+@ConditionalOnProperty(prefix = "spring.data.mongodb", value = "database")
 public class MongoEngineConfiguration extends AbstractMongoClientConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MongoEngineConfiguration.class);

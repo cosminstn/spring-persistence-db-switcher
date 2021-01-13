@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import tech.sharply.spring.db_switcher.persistence.implementations.nosql.config.MongoEngineConfiguration;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +20,7 @@ import javax.annotation.PostConstruct;
 		@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = DataSourceAutoConfiguration.class),
 		@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = HibernateJpaAutoConfiguration.class),
 })
+@EnableMongoRepositories
 //public class MongoApp extends App {
 public class MongoApp {
 
