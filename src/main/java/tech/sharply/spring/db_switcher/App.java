@@ -20,10 +20,8 @@ public class App implements CommandLineRunner {
 		applicationContext = SpringApplication.run(App.class, args);
 		checkBeansPresence("mongoUserRepository",
 				"mongoEngineConfiguration",
-				"mongoApp",
 				"sqlUserRepository",
-				"sqlEngineConfiguration",
-				"sqlApp");
+				"sqlEngineConfiguration");
 	}
 
 	private static void checkBeansPresence(String... beans) {

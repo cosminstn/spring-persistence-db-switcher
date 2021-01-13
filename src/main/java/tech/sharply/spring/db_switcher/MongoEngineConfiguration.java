@@ -1,4 +1,4 @@
-package tech.sharply.spring.db_switcher.persistence.implementations.nosql.config;
+package tech.sharply.spring.db_switcher;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -9,8 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -23,10 +27,13 @@ import tech.sharply.spring.db_switcher.persistence.implementations.nosql.MongoUs
 
 import java.util.List;
 
-// We either need the simple @EnableMongoRepository in a class on the top level (MongoApp in our case), or here with a basePackage for repos to search
-//@EnableMongoRepositories(basePackages = "tech.sharply.spring.db_switcher.persistence.implementations.nosql")
 @Configuration
-@ConditionalOnProperty(prefix = "spring.data.mongodb", value = "database")
+@ConditionalOnProperty("spring.data.mongodb.database")
+@ComponentScan(excludeFilters = {
+		@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = DataSourceAutoConfiguration.class),
+		@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = HibernateJpaAutoConfiguration.class),
+})
+@EnableMongoRepositories
 public class MongoEngineConfiguration extends AbstractMongoClientConfiguration {
 
 	private static final Logger LOG = LoggerFactory.getLogger(MongoEngineConfiguration.class);
@@ -74,4 +81,3 @@ public class MongoEngineConfiguration extends AbstractMongoClientConfiguration {
 	}
 
 }
-
