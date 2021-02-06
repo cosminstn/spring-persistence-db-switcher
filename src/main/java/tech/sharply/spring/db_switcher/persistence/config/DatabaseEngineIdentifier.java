@@ -1,4 +1,4 @@
-package tech.sharply.spring.db_switcher.persistence;
+package tech.sharply.spring.db_switcher.persistence.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +22,20 @@ public class DatabaseEngineIdentifier {
 
 	@PostConstruct
 	private void init() {
+		if (sqlEngineConfiguration == null && mongoEngineConfiguration == null) {
+			throw new RuntimeException("No database engine configured!");
+		}
+
+		if (sqlEngineConfiguration != null && mongoEngineConfiguration != null) {
+			throw new RuntimeException("Only one database engine can be configured!");
+		}
+
 		this.engine = sqlEngineConfiguration == null ? DatabaseEngine.NOSQL : DatabaseEngine.SQL;
 		LOG.info("App started with DB engine: " + this.engine.name());
+	}
+
+	public DatabaseEngine getEngine() {
+		return engine;
 	}
 
 	public enum DatabaseEngine {

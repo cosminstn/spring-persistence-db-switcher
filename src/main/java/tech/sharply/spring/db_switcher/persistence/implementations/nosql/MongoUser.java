@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.lang.NonNull;
 import tech.sharply.spring.db_switcher.persistence.entities.User;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,7 +20,7 @@ import tech.sharply.spring.db_switcher.persistence.entities.User;
 public class MongoUser implements User {
 
 	@Id
-	private ObjectId id;
+	private UUID id;
 	@NonNull
 	private String username;
 	@NonNull
