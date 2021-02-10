@@ -15,3 +15,4 @@ TODOs:
 Resources:
 1. [https://www.baeldung.com/spring-component-scanning](https://www.baeldung.com/spring-component-scanning)
 2. [https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa](https://www.baeldung.com/the-persistence-layer-with-spring-and-jpa)
+3. [https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-using-springbootapplication-annotation](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-using-springbootapplication-annotation)
