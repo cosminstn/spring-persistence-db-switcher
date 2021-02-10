@@ -1,10 +1,11 @@
 package tech.sharply.spring.db_switcher.persistence.entities;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public interface User {
 
-	Serializable getId();
+	UUID getId();
 
 	String getUsername();
 
